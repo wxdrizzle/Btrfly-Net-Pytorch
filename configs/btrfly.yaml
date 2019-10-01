@@ -1,0 +1,32 @@
+MODEL:
+  DEVICE: 'cuda'
+  USE_GAN: 0
+  IMAGE_SIZE: 256
+  USE_BN: 1
+  CHANNELS: (1, 32, 64, 128, 256, 256, 512, 1024, 512, 512, 256, 128, 64, 25)
+
+SOLVER:
+  LR: 3e-4
+  WEIGHT_DECAY: 1e-3
+  MAX_ITER: 500000
+  BATCH_SIZE: 2
+  SAVE_NUM: 5
+
+TEST:
+  BATCH_SIZE: 2
+  DEVICE: 'cuda'
+
+ORIGINAL_PATH: '/shenlab/local/zhenghan/original/'
+MAT_DIR_TRAIN: 'datasets/Label2DRes/train/'
+INPUT_IMG_DIR_TRAIN: 'datasets/JPEGRes/train/'
+
+
+CROP_INFO_DIR: 'datasets/Crop_info/'
+MAT_DIR_VAL: 'datasets/Label2DRes/val/'
+INPUT_IMG_DIR_VAL: 'datasets/JPEGRes/val/'
+
+MAT_DIR_TEST: 'datasets/Label2DRes/test/'
+INPUT_IMG_DIR_TEST: 'datasets/JPEGRes/test/'
+
+OUTPUT_DIR: 'outputs_16/'
+TRAIN_WEIGHT: "/shenlab/local/zhenghan/pj_wx/BtrflyNet/datasets/Label2D/weight/train_weight_8.mat"
