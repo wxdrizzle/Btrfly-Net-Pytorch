@@ -118,16 +118,15 @@ def pred(cfg):
             id_rate[step], id_rate_gt[step] = Get_Identification_Rate(gt_label_list, whole_step_list[step])
 
     if is_test:
-        # torch.save({"pred_list": whole_step_list[0], 'score': score_list[0],
-        #             'pred_cor_list': position_cor_list, 'pred_sag_list':position_sag_list,
-        #             'name':name_list}, "pred_list/pred_list_test_12_74.pth")
-        pass
+        torch.save({"pred_list": whole_step_list[0], 'score': score_list[0],
+                   'pred_cor_list': position_cor_list, 'pred_sag_list':position_sag_list,
+                   'name':name_list}, "pred_list/pred_test.pth")
     else:
         print("id_rate: ", id_rate)
         print("id_rate_gt: ", id_rate_gt)
-        # torch.save({"pred_list": whole_step_list[0], 'score': score_list[0], 'name': name_list, 'gt_list': gt_label_list,
-        #             'pred_cor_list': position_cor_list, 'pred_sag_list':position_sag_list},
-        #             "pred_list/pred_list_12_74.pth")
+        torch.save({"pred_list": whole_step_list[0], 'score': score_list[0], 'name': name_list, 'gt_list': gt_label_list,
+                    'pred_cor_list': position_cor_list, 'pred_sag_list':position_sag_list},
+                    "pred_list/pred.pth")
 
 
 
